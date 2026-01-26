@@ -1,0 +1,30 @@
+# CodeAuraGirl - LeetCode Daily Solutions
+
+LeetCode ID: https://leetcode.com/u/CodeAuraGirl/
+
+Problem 1200 - Minimum Absolute Difference
+Submission: https://leetcode.com/problems/minimum-absolute-difference/solutions/7583103/easy-by-codeauragirl-1yak
+Solution (Dart):
+
+```
+class Solution {
+  List<List<int>> minimumAbsDifference(List<int> a) {
+    a.sort();
+    int best = 1 << 60;
+    List<List<int>> res = [];
+    for (int i = 0; i + 1 < a.length; i++) {
+      int d = a[i + 1] - a[i];
+      if (d < best) {
+        best = d;
+        res.clear();
+      }
+      if (d == best) {
+        res.add([a[i], a[i + 1]]);
+      }
+    }
+    return res;
+  }
+}
+```
+
+If you like my solution, please give it a rating. Thank you.
